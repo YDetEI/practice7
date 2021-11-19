@@ -1,0 +1,22 @@
+.jumbotron-extend {
+    height: 166vh;
+    width: auto;
+    min-height: 350px;
+    margin-bottom: 60px;
+    background: url(public/images/p1_negate.jpeg) no-repeat center center;
+    background-size: cover;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav nav nav-masthead justify-content-flex-start {
+    background-color: rgb(0, 0, 0);
+}

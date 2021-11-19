@@ -1,23 +1,30 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var hello = require('./routes/hello');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const hello = require('./routes/hello');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 const session = require('express-session');
 
-var app = express();
+const app = express();
 
-var session_opt = {
+const session_opt = {
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 60 * 60 * 1000 }
 };
 app.use(session(session_opt));
+
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
